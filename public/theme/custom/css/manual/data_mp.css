@@ -1,0 +1,49 @@
+*,:hover ,:before, :after {
+	opacity:1 !important; 
+/*CSS transitions*/
+-o-transition-property: none !important;
+-moz-transition-property: none !important;
+-ms-transition-property: none !important;
+-webkit-transition-property: none !important;
+transition-property: none !important;
+/*CSS transforms*/
+-o-transform: none !important;
+-moz-transform: none !important;
+-ms-transform: none !important;
+-webkit-transform: none !important;
+transform: none !important;
+/*CSS animations*/
+-webkit-animation: none !important;
+-moz-animation: none !important;
+-o-animation: none !important;
+-ms-animation: none !important;
+animation: none !important;
+}
+img:hover{
+	border:none !important;
+}
+.io_text_hover 
+{
+	border:1px solid red;
+	cursor: copy !important;
+}  
+
+.io_text_saved
+{
+	border:1px solid green !important;
+}
+.io_text_saved:hover  
+{
+	border:1px solid green !important;
+	cursor: copy !important;
+}
+.io_text_hover a:hover
+{
+	transition: none !important; 
+	display:inline !important;
+	margin:0px;padding:0px;
+}
+.MySampleClassAddedUsefull:hover,
+{
+	border:1px solid red;
+}
