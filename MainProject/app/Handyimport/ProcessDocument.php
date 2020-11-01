@@ -66,6 +66,7 @@ class ProcessDocument
 			$req = new HTTPRequest($this->tmp_url);
 			$resp = json_decode($req->getBodyGuzzle(),true);
 		
+		echo $this->tmp_url;
 			
 			if(isset($resp['response_code']) && $resp['response_code'] == '200')
 			{
