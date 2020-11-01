@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Handyimport\ProcessDocument;
 use App\Handyimport\ProcessDocumentDOM;
 use App\Mail\HandyImportExtractedData;
-use Sunra\PhpSimple\HtmlDomParser;
+use KubAT\PhpSimple\HtmlDomParser;
 use Mail;
 use App\UserActivity;
 class UserExtractorController extends Controller

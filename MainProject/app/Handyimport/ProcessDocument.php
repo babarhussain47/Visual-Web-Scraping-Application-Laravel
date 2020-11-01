@@ -1,7 +1,7 @@
 <?php namespace App\Handyimport;
 
 
-use Sunra\PhpSimple\HtmlDomParser;
+use KubAT\PhpSimple\HtmlDomParser;
 
 use App\ErrorCode;
 

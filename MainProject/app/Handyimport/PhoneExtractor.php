@@ -2,7 +2,7 @@
 
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
-use Sunra\PhpSimple\HtmlDomParser;
+use KubAT\PhpSimple\HtmlDomParser;
 use Illuminate\Support\Facades\Storage;
 use App\ErrorCode;
 class PhoneExtractor

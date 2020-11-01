@@ -5,7 +5,7 @@ namespace App\Handyimport;
 use Illuminate\Http\Request;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
-use Sunra\PhpSimple\HtmlDomParser;
+use KubAT\PhpSimple\HtmlDomParser;
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Exception\ClientException;
