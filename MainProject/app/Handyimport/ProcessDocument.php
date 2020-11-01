@@ -69,6 +69,7 @@ class ProcessDocument
 			
 			if(isset($resp['response_code']) && $resp['response_code'] == '200')
 			{
+				echo "200";
 				$this->resp_loop['response_code'] = 200;
 				$this->dom = $req->body;
 				/*
@@ -97,6 +98,7 @@ class ProcessDocument
 			}
 			else
 			{
+				echo "400";
 				$this->resp_loop['response_code'] = 400;
 			}
 		
