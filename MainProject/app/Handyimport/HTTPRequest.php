@@ -101,8 +101,8 @@ class HTTPRequest
 			
 			$xmlBody =  $response->getBody()->getContents();
 			
-			$html = HtmlDomParser::get_dom_object();  // Making dom html 
-			$this->body = $html->load($xmlBody);       // geting html body
+			$this->body = HtmlDomParser::str_get_html($xmlBody);  // Making dom html 
+			//$this->body = $html->load($xmlBody);       // geting html body
 			if($this->body)
 			{
 				return json_encode(array('response_type' => 'success','response_code' => '200','response_message' => 'OK'));
