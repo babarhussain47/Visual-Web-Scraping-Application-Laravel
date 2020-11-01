@@ -120,6 +120,7 @@ class HTTPRequest
     }
     public function getBody()
     {
+		return json_encode(array('response_type' => 'success','response_code' => '200','response_message' => 'OK'));
 		$client = PJsClient::getInstance();
 		$client->getEngine()->setPath(public_path().'/bin/phantomjs');  
 
