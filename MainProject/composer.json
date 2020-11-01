@@ -8,10 +8,9 @@
         "php": ">=7.0.0",
         "fideloper/proxy": "~3.3",
         "guzzlehttp/guzzle": "^6.3",
-        "josh/laravel-phantomjs": "^0.0.4",
+        "josh/laravel-phantomjs": "^1.1.5",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
-        "sunra/php-simple-html-dom-parser": "^1.5"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
