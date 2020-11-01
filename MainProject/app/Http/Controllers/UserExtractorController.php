@@ -460,8 +460,8 @@ class UserExtractorController extends Controller
 				
 			   $tmp_file = "public/extractors/ext_".$extractor->ext_id."_".Auth::user()->id.".html";
 			   $file_obj_exist = Storage::exists($tmp_file);
-			   if(!$file_obj_exist)  
-			   //if(1)  
+			   //if(!$file_obj_exist)  
+			   if(1)  
 			   {
 					$url =$this->httpRequest->url;
 					$processDocument = new ProcessDocument($url,$reply_link['public_link'],$extractor,true);
@@ -504,7 +504,7 @@ class UserExtractorController extends Controller
 			   $ext_body = Storage::get($tmp_file);   
 			   
 			   $html = HtmlDomParser::str_get_html($ext_body);
-			   
+			   return $html;
 			  
 			   
 			   if($html)
@@ -536,7 +536,7 @@ class UserExtractorController extends Controller
 				$userActivity->act_desc = "Visual Builder for (".$extractor->ext_name."-".$extractor->ext_id.") Opened!";
 				$userActivity->save();
 				
-				return $html;
+				
 				   return $this->alreadySavedData($extractor,$html);
 				}
 				else
