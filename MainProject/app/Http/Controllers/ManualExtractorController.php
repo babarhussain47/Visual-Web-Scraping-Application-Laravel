@@ -28,7 +28,7 @@ class ManualExtractorController extends Controller
 			$url = $this->cleanBaseURL($_GET['url']);
 			$extractor = Extractor::where(['ext_url' =>  $url,'user_id' => '1'])->first();
 			
-			if(count($extractor) == 0 )
+			if(count((array)$extractor) == 0 )
 			{
 				$extractor = new Extractor();
 				$extractor->ext_url = $url;
@@ -47,7 +47,7 @@ class ManualExtractorController extends Controller
 			$url = $this->cleanBaseURL($_GET['url']);
 			$extractor = Extractor::where(['ext_url' => $url ,'user_id' => '1'])->first();
 			
-			if(count($extractor) == 0 )
+			if(count((array)$extractor) == 0 )
 			{
 				 return 'Extractor not found';
 			}

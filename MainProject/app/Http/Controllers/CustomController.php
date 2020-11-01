@@ -114,7 +114,7 @@ class CustomController extends Controller
 		$xtractorAnalytic->total_requests = ($et-$st);
 		$xtractorAnalytic->save();
 		
-		echo "\nOver all time to fetch ".count( $hipagesd)." businesses ".($et-$st)."\n";
+		echo "\nOver all time to fetch ".count((array) $hipagesd)." businesses ".($et-$st)."\n";
 }  
    public function traverseBusinessPhoneAPI()
    {
@@ -128,7 +128,7 @@ class CustomController extends Controller
 					$api_url = "https://hipages.com.au/api/directory/phone?number=".$h->contactKey;	//	
 					$promises[$h->contactKey] = $client->getAsync($api_url);
 					
-				if($lp == 250 || $lp == count($hipagesd))
+				if($lp == 250 || $lp == count((array)$hipagesd))
 				{
 						echo "P ".$key."\n";				
 						// Wait on all of the requests to complete. Throws a ConnectException
@@ -176,7 +176,7 @@ class CustomController extends Controller
 				
 			}	
 		$et = time();
-		echo "\nPhone ".count($hipagesd)." update time ".($et-$st)."\n";
+		echo "\nPhone ".count((array)$hipagesd)." update time ".($et-$st)."\n";
 }
 
   public function traverseBusinessMemberAPI()
@@ -199,7 +199,7 @@ class CustomController extends Controller
 				
 				$promises[$h->siteKey] = $client->getAsync($api_url);
 				
-				if($lp == 150 || $lp == count($hipagesd))
+				if($lp == 150 || $lp == count((array)$hipagesd))
 				{
 						//echo "P ".$key."\n";				
 						// Wait on all of the requests to complete. Throws a ConnectException
@@ -253,7 +253,7 @@ class CustomController extends Controller
 			}
 		//$this->sendMail($this->todayDate);	
 		$et = time();
-		echo "\nAdded on ".count($hipagesd)." update time ".($et-$st)."\n";
+		echo "\nAdded on ".count((array)$hipagesd)." update time ".($et-$st)."\n";
 }
 
 public function saveFile($date,$all=false)
@@ -411,7 +411,7 @@ public function sendMail($date,$all=false)
 				
 			try{
 					$hipages = HiPages::where(['siteKey'=>$siteKey])->get();
-					if(count($hipages) == 0)
+					if(count((array)$hipages) == 0)
 					{
 						$hipages = new HiPages();
 						$hipages->siteName = $siteName;

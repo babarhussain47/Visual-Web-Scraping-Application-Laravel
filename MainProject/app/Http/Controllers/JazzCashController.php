@@ -81,7 +81,7 @@ class JazzCashController extends Controller
 							$transaction->save();
 							
 							$order = Order::where(['order_status' => 0,'o_id' => $order_id])->first();
-							if(count($order) == 0)
+							if(count((array)$order) == 0)
 								{
 									return redirect('packages/list')->with("error","NO_ORDER_FOUND");
 								}
@@ -89,7 +89,7 @@ class JazzCashController extends Controller
 							 // do your handling for success
 							 
 							 			$package = Package::find($package_id);
-										if(count($package) == 0)
+										if(count((array)$package) == 0)
 										{
 											return redirect('packages/list')->with("error","NO_PACKAGE_FOUND");
 										}

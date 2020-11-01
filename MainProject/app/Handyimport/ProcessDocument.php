@@ -156,7 +156,7 @@ class ProcessDocument
 			// else
 				// $tmp_ext_data['column_1']['data'] = array();
 			}
-			if(count($tmp_ext_data) == 0)
+			if(count((array)$tmp_ext_data) == 0)
 			{
 				$tmp_ext_data['column_1']['data'] = array();
 			}

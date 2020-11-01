@@ -21,7 +21,7 @@ class UserAPIController extends Controller
 	
 	function deleteApp(Request $request){
 		$app = App::where(["app_id" => $request->app_id,'user_id' => Auth::user()->id])->first();
-		if(count($app) > 0)
+		if(count((array)$app) > 0)
 		{
 			
 			$userActivity = new UserActivity();

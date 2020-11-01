@@ -99,7 +99,7 @@ class UserExtractorController extends Controller
    {
 	    $extractor = Extractor::where(['ext_id' =>  $id,'user_id' => Auth::user()->id])->first();
 			   
-			   if(count($extractor) > 0)
+			   if(count((array)$extractor) > 0)
 			   { 
 					//$extractor->ext_url = $url;
 					$extractor->ext_urls = $request->extractor_urls;
@@ -145,7 +145,7 @@ class UserExtractorController extends Controller
    function extractorSettings2($id)
    {
 		$extractor = Extractor::where(['ext_id' =>  $id])->first();
-	   if(count($extractor) == 0)
+	   if(count((array)$extractor) == 0)
 	   {
 			return redirect("/user/extractor/new")->with('error','Something went wrong');   
 	   }
@@ -154,7 +154,7 @@ class UserExtractorController extends Controller
    function extractorSettings($id) 
    {
 		$extractor = Extractor::where(['ext_id' =>  $id])->first();
-	   if(count($extractor) == 0)
+	   if(count((array)$extractor) == 0)
 	   {
 			return redirect("/user/extractor/new")->with('error','Something went wrong');   
 	   }
@@ -164,7 +164,7 @@ class UserExtractorController extends Controller
    function extractorDataPage($id)
    {
 	   $extractor = Extractor::where(['ext_id' =>  $id])->first();
-	   if(count($extractor) == 0)
+	   if(count((array)$extractor) == 0)
 	   {
 			return redirect("/user/extractor/new")->with('error','Something went wrong');   
 	   }
@@ -176,7 +176,7 @@ class UserExtractorController extends Controller
 	    if(isset($request->_token) && $request->_token == csrf_token())
 	   {
 		   $extractor = Extractor::where(['ext_id' =>  $id,'user_id' => $user_id])->first();
-		   if(count($extractor) > 0)
+		   if(count((array)$extractor) > 0)
 		   {
 			    $extractor->ext_draft = 0; 
 				if($request->ext_draft && $request->ext_draft == 0)
@@ -201,7 +201,7 @@ class UserExtractorController extends Controller
 	   if(isset($request->_token) && $request->_token == csrf_token() || $request->_token == "hi_cron_job")
 	   {
 			   $extractor = Extractor::where(['ext_id' =>  $id,'user_id' => $user_id])->first();
-		   if(count($extractor) == 0)
+		   if(count((array)$extractor) == 0)
 		   {
 				return redirect("/user/extractor/new")->with('error','Something went wrong');   
 		   }
@@ -278,7 +278,7 @@ class UserExtractorController extends Controller
 	   
 			   $extractor = Extractor::where(['ext_url' =>  $url,'user_id' => Auth::user()->id])->first();
 			   
-			   if(count($extractor) == 0)
+			   if(count((array)$extractor) == 0)
 			   { 
 					$extractor = new Extractor();
 					$extractor->ext_url = $url;
@@ -325,7 +325,7 @@ class UserExtractorController extends Controller
 	   {
 		   $extractor = Extractor::where(['ext_id' =>  $request->ext_id,'user_id' => Auth::user()->id])->first();
 	   
-		   if(count($extractor) > 0)
+		   if(count((array)$extractor) > 0)
 		   {
 			   
 				$userActivity = new UserActivity();
@@ -361,7 +361,7 @@ class UserExtractorController extends Controller
 		{
 			$tmp_ext_data[$x]["data"] = $column_x["data"]["p1"];
 		}
-		if(count($tmp_ext_data) == 0)
+		if(count((array)$tmp_ext_data) == 0)
 		{
 			$tmp_ext_data['column_1']['data'] = array();
 		}
@@ -449,7 +449,7 @@ class UserExtractorController extends Controller
    {
 	   define('MAX_FILE_SIZE', 6000000); 
 	   $extractor = Extractor::where(['ext_id' =>  $id])->first();
-	   if(count($extractor) == 0)
+	   if(count((array)$extractor) == 0)
 	   {
 			return view("/errors/404")->with('error','Something went wrong or Extractor not found');   
 	   }
@@ -591,7 +591,7 @@ class UserExtractorController extends Controller
 			}
 			$extractor = Extractor::where(['ext_id' => $id])->first();
 
-			if(count($extractor) > 0 && $extractor->ext_draft == 0)
+			if(count((array)$extractor) > 0 && $extractor->ext_draft == 0)
 			{
 				
 				$json_data = array();
@@ -739,7 +739,7 @@ class UserExtractorController extends Controller
 		{
 			$extractor = Extractor::where(['ext_id' => $id])->first();
 
-			if(count($extractor) > 0 && $extractor->ext_draft == 0)
+			if(count((array)$extractor) > 0 && $extractor->ext_draft == 0)
 			{
 				
 				$json_data = array();

@@ -24,7 +24,7 @@ class VerifyController extends Controller
 		$already_sent = DB::table('verify')
 				    ->where('phone', '=', Auth::user()->phone)
     				    ->first();
-		if(count($already_sent) > 0){
+		if(count((array)$already_sent) > 0){
 
 					$date = substr($already_sent->created_at,0,10);
 					$tme = substr($already_sent->created_at,11,19);
@@ -55,7 +55,7 @@ class VerifyController extends Controller
     public function isValidPhoneCode(Request $request)
 	{
 		$get_code = DB::table('verify')->where([['code', '=', $request->verification_code],    ['phone', '=', Auth::user()->phone]])->first();
-		if(count($get_code) > 0){
+		if(count((array)$get_code) > 0){
        		Auth::user()->phone_verified = true;
 			Auth::user()->save();
 		if(Auth::user()->email_verified && Auth::user()->phone_verified)

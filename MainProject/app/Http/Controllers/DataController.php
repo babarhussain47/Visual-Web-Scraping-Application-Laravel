@@ -34,7 +34,7 @@ class DataController extends Controller
 		{
 			$extractor = Extractor::where(['user_id' => $request->user_id,'ext_id' => $request->ext_id])->first();
 			
-			if(count($extractor) > 0 )
+			if(count((array)$extractor) > 0 )
 			{
 				$ext_bot_data = json_decode($extractor->ext_bot,true);
 				
@@ -86,7 +86,7 @@ class DataController extends Controller
 		{
 			$extractor = Extractor::where(['user_id' => $request->user_id,'ext_id' => $request->ext_id])->first();
 			
-			if(count($extractor) > 0 )
+			if(count((array)$extractor) > 0 )
 			{
 				$ext_bot_data = json_decode($extractor->ext_bot,true);
 				$data_saved = json_decode($extractor->ext_data,true);
@@ -100,7 +100,7 @@ class DataController extends Controller
 							}
 
 							$data_for_bot1 =$ext_bot_data[$request->change_identifier]['bot'];
-							$bot_hi_count = count($data_for_bot1);
+							$bot_hi_count = count((array)$data_for_bot1);
 							
 							$unique_ids = $request->unique_id_hi_element;
 							$unique_id_texts = $request->data_text_hi_element;
