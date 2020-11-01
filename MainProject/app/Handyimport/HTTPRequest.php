@@ -120,9 +120,8 @@ class HTTPRequest
     }
     public function getBody()
     {
-		return json_encode(array('response_type' => 'success','response_code' => '200','response_message' => 'OK'));
 		$client = PJsClient::getInstance();
-		$client->getEngine()->setPath(public_path().'/bin/phantomjs');  
+		$client->getEngine()->setPath('/var/www/clients/client1/web16/web/public/bin/phantomjs');  
 
 		$client->isLazy();		
 		/** 
@@ -150,8 +149,7 @@ class HTTPRequest
 		$client->send($request, $response);
 		
 		if($response->getStatus() === 200) {
-			$html = HtmlDomParser::get_dom_object();  // Making dom html 
-			$this->body = $html->load($response->getContent());       // geting html body
+			$this->body = HtmlDomParser::str_get_html($response->getContent());
 			return json_encode(array('response_type' => 'success','response_code' => '200','response_message' => 'OK'));	
 		}
 		else
@@ -176,8 +174,7 @@ class HTTPRequest
 			'form_params' => [$data]]); // using the http client we are making get request to fetch the body of html page
 			$response_code =  $response->getStatusCode(); 
 			$xmlBody =  $response->getBody();
-			$html = HtmlDomParser::get_dom_object();  // Making dom html 
-			$body = $html->load($xmlBody);       // geting html body 
+			$this->body = HtmlDomParser::str_get_html($xmlBody);
 			return $body;
 			
 		}
