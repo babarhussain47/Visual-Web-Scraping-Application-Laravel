@@ -536,7 +536,7 @@ class UserExtractorController extends Controller
 				$userActivity->act_desc = "Visual Builder for (".$extractor->ext_name."-".$extractor->ext_id.") Opened!";
 				$userActivity->save();
 				
-				
+				return $html;
 				   return $this->alreadySavedData($extractor,$html);
 				}
 				else
