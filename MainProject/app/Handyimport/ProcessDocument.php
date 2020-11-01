@@ -141,7 +141,7 @@ class ProcessDocument
 		
 	function addStylesAndScripts()
 	{
-		$host = "http://hi.babar.work";
+		$host = "https://hi.babar.work";
 		$tmp_ext_data['column_1']['data'] = array();
 
 		$var = '' ;
