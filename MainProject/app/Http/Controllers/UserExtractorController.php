@@ -505,7 +505,7 @@ class UserExtractorController extends Controller
 			   
 			   $html = HtmlDomParser::str_get_html($ext_body);
 			   
-			   print_r($html);
+			   echo($html);
 			   return $html;
 			  
 			   
