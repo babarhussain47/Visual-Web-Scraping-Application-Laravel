@@ -65,6 +65,7 @@ class ProcessDocument
 		try{
 			$req = new HTTPRequest($this->tmp_url);
 			$resp = json_decode($req->getBodyGuzzle(),true);
+		
 			
 			if(isset($resp['response_code']) && $resp['response_code'] == '200')
 			{
@@ -140,7 +141,7 @@ class ProcessDocument
 		
 	function addStylesAndScripts()
 	{
-		$host = "https://dev.handyimport.io";
+		$host = "http://hi.babar.work";
 		$tmp_ext_data['column_1']['data'] = array();
 
 		$var = '' ;
@@ -263,7 +264,7 @@ class ProcessDocument
 		if($e->getResponse())
 			{
 				$this->error = ErrorCode::where(['error_code' => $e->getResponse()->getStatusCode()])->first();
-				if(count($this->error) > 0)
+				if(count((array)$this->error) > 0)
 				{
 					$this->response['response_type'] 	=  "error";
 					$this->response['response_code'] 	=  $this->error->error_code;
