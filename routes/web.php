@@ -19,7 +19,37 @@ use App\Handyimport\ProcessDocument;
 use JonnyW\PhantomJs\Client;
 //public_path()
 Route::get('/p', function(){
+	$url = request()->url;
+	$reply_link = $this->getDataSaveUrl($url);
+		
+	$url =$this->httpRequest->url;
+	
+	if($reply_link['storage_link'] != "ERROR")
+		{
+			echo $url . $reply_link['public_link'];
+			$r_counts--;
+			$obj = new ProcessDocument($url,$reply_link['public_link'],$extractor,true,false); 
+			$total_requests++;
+			if($obj->resp_loop['response_code'] == 200)
+			{
+				foreach($obj->bot_data_tags as $col_name => $tmp_li)
+				{
+					$col_data  = array();
+					foreach($tmp_li['bot'] as $bx){
+						
+						$b = "[data-hi_id=".$bx."]";
+						$col_data[$bx] = strip_tags($obj->bodyTag->find($b,0));
+						$row_count++;
+					}
+					$json_data[$col_name]["data"]["p$i"] = $col_data;
+				}
+			}
+			else
+				break;
+			//Storage::delete($reply_link['storage_link']);
+		}
 
+	return;
 	$st = time()+microtime();
 	$url = "https://www.google.com/flights?hl=en&gl=al#flt=/m/04jpl.KEF.2019-12-05*KEF./m/04jpl.2020-01-31;b:1;c:GBP;e:1;a:U2*U2;px:2;sd:1;t:f";
     if(isset($_GET['url']))
