@@ -142,7 +142,7 @@ class ProcessDocument
 		
 	function addStylesAndScripts()
 	{
-		$host = "https://hi.babar.work";
+		$host = "https://hi.aimfox.pk";
 		$tmp_ext_data['column_1']['data'] = array();
 
 		$var = '' ;
