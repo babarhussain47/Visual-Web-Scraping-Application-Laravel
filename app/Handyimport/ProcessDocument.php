@@ -39,7 +39,7 @@ class ProcessDocument
 		$this->extractor = $extractor;
 		$this->auto_bot = $auto_bot;
 		$this->visual_builder = $visual_builder;
-		$this->startProcessing();
+		print_r($this->startProcessing());
 	}
 	
 	/*
