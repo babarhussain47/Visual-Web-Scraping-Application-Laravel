@@ -631,7 +631,7 @@ class UserExtractorController extends Controller
 					for($i=$urls_data["data"][$key][0];$i<=$urls_data["data"][$key][2];$i += $urls_data["data"][$key][1])
 					{
 						$url = str_replace("[[".$urls_data["params"][$key]."]]",$i,$urls_data["url"]);
-						//echo $url;
+						echo $url;
 						if($r_counts <= 0)
 							{
 								$packageDetail->updatePackage($packageDetail->allowed_requests,0);
