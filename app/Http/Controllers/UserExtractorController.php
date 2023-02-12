@@ -464,8 +464,8 @@ class UserExtractorController extends Controller
 			   $tmp_file = "public/extractors/ext_".$extractor->ext_id."_".Auth::user()->id.".html";
 			   $file_obj_exist = Storage::exists($tmp_file);
 			   
-			   //if(!$file_obj_exist)  
-			   if(1)  
+			   if(!$file_obj_exist)  
+			   //if(1)  
 			   {
 					$url =$this->httpRequest->url;
 					$processDocument = new ProcessDocument($url,$reply_link['public_link'],$extractor,true);
