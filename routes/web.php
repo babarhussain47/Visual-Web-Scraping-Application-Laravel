@@ -18,66 +18,11 @@ use App\Extractor;
 use App\Handyimport\ProcessDocument;
 use JonnyW\PhantomJs\Client;
 
- function getDataSaveUrl($url)
-	{
-		$this->httpRequest->url = $url;
-		$tmp_file_body_load = "public/extractors/ext_".rand(1000,9999)."_".Auth::user()->id.".html";
-		$resp = json_decode($this->httpRequest->getBodyGuzzle(),true);
-		
-		if(isset($resp['response_code']) && $resp['response_code'] == '200')
-			{
-				$fileContentsBodyLoad = 
-						"<!DOCTYPE html>
-						<html>".
-						$this->httpRequest->body.
-						"</html>";
-				Storage::put($tmp_file_body_load, $fileContentsBodyLoad);
-				$tmp_lnk_body_load = url(str_replace("public","storage",$tmp_file_body_load));
-				return array(
-				'storage_link' => $tmp_file_body_load,
-				'public_link' => $tmp_lnk_body_load
-				
-				);
-			}
-			else
-			{
-				return array("storage_link"=>"ERROR");
-			}
-		
-	}
 
 
 //public_path()
 Route::get('/p', function(){
-	$url = request()->url;
-	$reply_link = $this->getDataSaveUrl($url);
-		
-	$url =$this->httpRequest->url;
 	
-	if($reply_link['storage_link'] != "ERROR")
-		{
-			echo $url . $reply_link['public_link'];
-			$r_counts--;
-			$obj = new ProcessDocument($url,$reply_link['public_link'],$extractor,true,false); 
-			$total_requests++;
-			if($obj->resp_loop['response_code'] == 200)
-			{
-				foreach($obj->bot_data_tags as $col_name => $tmp_li)
-				{
-					$col_data  = array();
-					foreach($tmp_li['bot'] as $bx){
-						
-						$b = "[data-hi_id=".$bx."]";
-						$col_data[$bx] = strip_tags($obj->bodyTag->find($b,0));
-						$row_count++;
-					}
-					$json_data[$col_name]["data"]["p$i"] = $col_data;
-				}
-			}
-			else
-				{}
-			//Storage::delete($reply_link['storage_link']);
-		}
 
 	return;
 	$st = time()+microtime();
