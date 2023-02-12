@@ -470,8 +470,7 @@ class UserExtractorController extends Controller
 					$url =$this->httpRequest->url;
 					$processDocument = new ProcessDocument($url,$reply_link['public_link'],$extractor,true);
 					// Check if any data already exist then embed in the html body
-					echo $processDocument->resp_loop['response_code'];
-					return ;
+				
 					$fileContents = '
 					<!--  modal start -->
 <div id="modal_extractors" class="modal fade" role="dialog" style="z-index:9999999;">
