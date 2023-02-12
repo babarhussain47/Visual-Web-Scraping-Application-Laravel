@@ -23,6 +23,8 @@ test 22 data
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 		<script>
 		var csrf_token = '<?php echo csrf_token() ;?>';
+		
+		var user_id = '{{Auth::user()->id}}';
 		</script>
 		<script type="text/javascript" src="https://smartschool.aimfox.net/theme/files/assets/pages/edit-table/jquery.tabledit.js"></script>
 		<script src="/theme/custom/js/manual/data_mp.js"></script>

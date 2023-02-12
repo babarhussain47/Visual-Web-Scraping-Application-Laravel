@@ -131,6 +131,7 @@ class ProcessDocumentDOM
 		
 		<script>
 		
+		var user_id = '.Auth::user()->id.';
 		var ext_id = '.$this->extractor->ext_id.';
 		var csrf_token = "'.csrf_token().';"
 		

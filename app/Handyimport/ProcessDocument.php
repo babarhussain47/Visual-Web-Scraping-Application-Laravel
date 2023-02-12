@@ -4,7 +4,7 @@
 use KubAT\PhpSimple\HtmlDomParser;
 
 use App\ErrorCode;
-
+use Auth;
 use App\Handyimport\HTTPRequest;
 use App\Handyimport\ProcessCSS;
 class ProcessDocument
@@ -190,7 +190,7 @@ class ProcessDocument
 		
 		
 		<script>
-		
+		var user_id = '.Auth::user()->id.';
 		var ext_id = '.$this->extractor->ext_id.';
 		var ext_draft = '.$this->extractor->ext_draft.';
 		var csrf_token = "'.csrf_token().';"
