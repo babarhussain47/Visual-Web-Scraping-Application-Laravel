@@ -600,8 +600,8 @@ class UserExtractorController extends Controller
 				
 				$json_data = array();
 				
-				//$reply_link = $this->getDataSaveUrl($extractor->ext_url);
-				$reply_link = $this->getDataSaveUrl("https://books.toscrape.com/catalogue/page-2.html");
+				$reply_link = $this->getDataSaveUrl($extractor->ext_url);
+				///$reply_link = $this->getDataSaveUrl("https://books.toscrape.com/catalogue/page-2.html");
 		
 				$url =$this->httpRequest->url;
 				if($reply_link['storage_link'] != "ERROR")
