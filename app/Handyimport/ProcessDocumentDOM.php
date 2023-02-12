@@ -139,8 +139,8 @@ class ProcessDocumentDOM
 		<div id="add_the_csrf_token"></div>
 		
 		<script src="/theme/files/assets/pages/edit-table/jquery.tabledit.js"></script>
-		<script src="/theme/custom/js/manual/data_mp.js"></script>
-		<script src="/theme/custom/js/manual/data_db.js"></script>
+		<script src="/theme/custom/js/manual/data_mp.js?v='.time().'"></script>
+		<script src="/theme/custom/js/manual/data_db.js?v='.time().'"></script>
 		';
 		
 		if($this->auto_bot)

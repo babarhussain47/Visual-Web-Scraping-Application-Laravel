@@ -201,9 +201,9 @@ class ProcessDocument
 		<script class="hi_null" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 		<script  class="hi_null" src="'.$host.'/theme/files/assets/pages/edit-table/jquery.tabledit.js"></script>
-		<script  class="hi_null" src="'.$host.'/theme/custom/js/manual/dynamic_processor.js"></script> 
-		<script  class="hi_null" src="'.$host.'/theme/custom/js/manual/data_mp.js"></script>
-		<script  class="hi_null" src="'.$host.'/theme/custom/js/manual/data_db.js"></script>
+		<script  class="hi_null" src="'.$host.'/theme/custom/js/manual/dynamic_processor.js?v='.time().'"></script> 
+		<script  class="hi_null" src="'.$host.'/theme/custom/js/manual/data_mp.js?v='.time().'"></script>
+		<script  class="hi_null" src="'.$host.'/theme/custom/js/manual/data_db.js?v='.time().'"></script>
 		';
 		
 		if($this->auto_bot)

@@ -27,8 +27,8 @@ test 22 data
 		var user_id = '{{Auth::user()->id}}';
 		</script>
 		<script type="text/javascript" src="https://smartschool.aimfox.net/theme/files/assets/pages/edit-table/jquery.tabledit.js"></script>
-		<script src="/theme/custom/js/manual/data_mp.js"></script>
-		<script src="/theme/custom/js/manual/data_db.js"></script>
+		<script src="/theme/custom/js/manual/data_mp.js?v={{time()}}"></script>
+		<script src="/theme/custom/js/manual/data_db.js?v={{time()}}'"></script>
 <!-- Select 2 js -->
 
 </body>
