@@ -57,6 +57,8 @@ Route::get('/p', function(){
 	echo $et-$st;
 });
 Route::get('/test-url', function(){
+//print_r( session('current_resp','nothing'));
+	//return;
 	$httpRequest = new HTTPRequest($_GET['url']);
 	echo $httpRequest->getContentOnly($_GET['url']);
 })->name('test');

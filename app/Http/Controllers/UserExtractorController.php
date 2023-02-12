@@ -398,8 +398,10 @@ class UserExtractorController extends Controller
 			</script>";
 			
 		$var .= $test;
+		if($html->find('body',0))
+			$html->find('body',0)->outertext = $html->find('body',0)->makeup() . $html->find('body',0)->innertext . $var . '</body>';
 		
-		$html->find('body',0)->outertext = $html->find('body',0)->makeup() . $html->find('body',0)->innertext . $var . '</body>';
+		
 		return $html;
    }
    
@@ -455,18 +457,21 @@ class UserExtractorController extends Controller
 	   }
 		$reply_link = $this->getDataSaveUrl($extractor->ext_url);
 		
+		
 		if($reply_link['storage_link'] != "ERROR")
 			{
 				
 			   $tmp_file = "public/extractors/ext_".$extractor->ext_id."_".Auth::user()->id.".html";
 			   $file_obj_exist = Storage::exists($tmp_file);
-			   if(!$file_obj_exist)  
-			   //if(1)  
+			   
+			   //if(!$file_obj_exist)  
+			   if(1)  
 			   {
 					$url =$this->httpRequest->url;
 					$processDocument = new ProcessDocument($url,$reply_link['public_link'],$extractor,true);
 					// Check if any data already exist then embed in the html body
-					
+					echo $processDocument->resp_loop['response_code'];
+					return ;
 					$fileContents = '
 					<!--  modal start -->
 <div id="modal_extractors" class="modal fade" role="dialog" style="z-index:9999999;">
@@ -504,7 +509,7 @@ class UserExtractorController extends Controller
 			   $ext_body = Storage::get($tmp_file);   
 			   
 			   $html = HtmlDomParser::str_get_html($ext_body);
-			   			  
+			   			 
 			   
 			   if($html)
 			   {

@@ -64,6 +64,7 @@ class ProcessDocument
 		
 		try{
 			$req = new HTTPRequest($this->tmp_url);
+			echo $this->tmp_url;
 			$resp = json_decode($req->getBodyGuzzle(),true);
 		
 			
