@@ -45,7 +45,7 @@ Route::get('/p', function(){
 				}
 			}
 			else
-				break;
+				{}
 			//Storage::delete($reply_link['storage_link']);
 		}
 
