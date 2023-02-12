@@ -32,7 +32,7 @@ Your Order Id is ".$order->o_id;
 	// Mobilink Payment Method Integration	
 		$MerchantID    = "MC7623"; //Your Merchant from transaction Credentials
 		$Password      = "8v031w7y55"; //Your Password from transaction Credentials
-		$ReturnURL     = "https://dev.handyimport.io/payment-success"; //Your Return URL
+		$ReturnURL     = "https://hi.aimfox.pk/payment-success"; //Your Return URL
 		$HashKey = "b1081z03b3";//Your HashKey integrity salt from transaction Credentials	
 		$PostURL = "https://sandbox.jazzcash.com.pk/CustomerPortal/transactionmanagement/merchantform";
  

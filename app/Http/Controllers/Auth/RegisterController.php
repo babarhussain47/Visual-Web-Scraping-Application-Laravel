@@ -85,7 +85,7 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
         ]);
 		
-		$message_body = "Dear ".$user->first_name.",<br>Assalam O Alaikum!<br>Thanks for joining AIMFOX IT SOLUTIONS (SMC-PVT) LTD NETWORK.<br>Your account for handyimport.io is created.
+		$message_body = "Dear ".$user->first_name.",<br>Assalam O Alaikum!<br>Thanks for joining AIMFOX IT SOLUTIONS (SMC-PVT) LTD NETWORK.<br>Your account for hi.aimfox.pk is created.
 ";
 		
 		

@@ -80,7 +80,7 @@ $(document).ready(function() {
         }
         ]
     ,
-        "ajax": "https://dev.handyimport.io/user/extractor/"+<?php echo $extractor->ext_id?>+"/ajax-data/<?php echo Auth::user()->id;?>?_token=<?php echo csrf_token();?>"
+        "ajax": "https://hi.aimfox.pk/user/extractor/"+<?php echo $extractor->ext_id?>+"/ajax-data/<?php echo Auth::user()->id;?>?_token=<?php echo csrf_token();?>"
     });
 });
 	</script>

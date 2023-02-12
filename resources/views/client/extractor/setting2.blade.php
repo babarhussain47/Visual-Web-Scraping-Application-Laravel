@@ -31,7 +31,7 @@
 ?>
 
     <!-- Styles -->
-    <link type="text/css" href="https://dev.handyimport.io/theme/files/bower_components/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="https://hi.aimfox.pk/theme/files/bower_components/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Switch component css -->
     <link rel="stylesheet" type="text/css" href="{{asset('theme/files/bower_components/switchery/css/switchery.min.css')}}">
 
@@ -301,10 +301,10 @@
 <!-- Page body end -->
 
 	    <!-- Required Jquery -->
-	<script type="text/javascript" src="https://dev.handyimport.io/theme/files/bower_components/jquery/js/jquery.min.js"></script>
-    <script type="text/javascript" src="https://dev.handyimport.io/theme/files/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="https://dev.handyimport.io/theme/files/bower_components/popper.js/js/popper.min.js"></script>
-    <script type="text/javascript" src="https://dev.handyimport.io/theme/files/bower_components/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://hi.aimfox.pk/theme/files/bower_components/jquery/js/jquery.min.js"></script>
+    <script type="text/javascript" src="https://hi.aimfox.pk/theme/files/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://hi.aimfox.pk/theme/files/bower_components/popper.js/js/popper.min.js"></script>
+    <script type="text/javascript" src="https://hi.aimfox.pk/theme/files/bower_components/bootstrap/js/bootstrap.min.js"></script>
 <!-- Bootstrap date-time-picker js -->
     <script src="{{asset('theme/files/assets/pages/advance-elements/moment-with-locales.min.js')}}"></script>
     <script src="{{asset('theme/files/bower_components/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>

@@ -6,7 +6,7 @@
 use App\Handyimport\ProcessDocument;
 $st = time();
 
-$url = 'https://handyimport.io/';
+$url = 'https://hi.aimfox.pk/';
 if(isset($_GET['url']))
 	$url = $_GET['url'];
 
