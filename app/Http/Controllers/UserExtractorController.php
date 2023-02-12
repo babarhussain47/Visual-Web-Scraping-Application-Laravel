@@ -621,7 +621,7 @@ class UserExtractorController extends Controller
 					$json_data[$col_name]["data"]["p1"] = $col_data;
 				}
 				
-				//Storage::delete($reply_link['storage_link']);
+				Storage::delete($reply_link['storage_link']);
 				
 				$urls_data = json_decode($extractor->ext_urls,true);
 				
@@ -665,7 +665,7 @@ class UserExtractorController extends Controller
 								}
 								else
 									break;
-								Storage::delete($reply_link['storage_link']);
+								//Storage::delete($reply_link['storage_link']);
 							}
 					}
 				}
