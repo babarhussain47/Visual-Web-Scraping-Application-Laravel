@@ -631,7 +631,7 @@ class UserExtractorController extends Controller
 					for($i=$urls_data["data"][$key][0];$i<=$urls_data["data"][$key][2];$i += $urls_data["data"][$key][1])
 					{
 						$url = str_replace("[[".$urls_data["params"][$key]."]]",$i,$urls_data["url"]);
-						echo $url;
+						
 						if($r_counts <= 0)
 							{
 								$packageDetail->updatePackage($packageDetail->allowed_requests,0);
@@ -642,8 +642,10 @@ class UserExtractorController extends Controller
 						$reply_link = $this->getDataSaveUrl($url);
 		
 						$url =$this->httpRequest->url;
+						
 						if($reply_link['storage_link'] != "ERROR")
 							{
+								echo $url . $reply_link['public_link'];
 								$r_counts--;
 								$obj = new ProcessDocument($url,$reply_link['public_link'],$extractor,true,false); 
 								$total_requests++;
