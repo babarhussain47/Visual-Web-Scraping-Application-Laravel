@@ -639,7 +639,7 @@ class UserExtractorController extends Controller
 							}
 						
 						
-						$reply_link = $this->getDataSaveUrl($extractor->ext_url);
+						$reply_link = $this->getDataSaveUrl($url);
 		
 						$url =$this->httpRequest->url;
 						if($reply_link['storage_link'] != "ERROR")
