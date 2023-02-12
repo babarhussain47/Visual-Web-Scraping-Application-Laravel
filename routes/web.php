@@ -18,7 +18,7 @@ use App\Extractor;
 use App\Handyimport\ProcessDocument;
 use JonnyW\PhantomJs\Client;
 
-public function getDataSaveUrl($url)
+ function getDataSaveUrl($url)
 	{
 		$this->httpRequest->url = $url;
 		$tmp_file_body_load = "public/extractors/ext_".rand(1000,9999)."_".Auth::user()->id.".html";
@@ -46,7 +46,7 @@ public function getDataSaveUrl($url)
 		
 	}
 
-	
+
 //public_path()
 Route::get('/p', function(){
 	$url = request()->url;
