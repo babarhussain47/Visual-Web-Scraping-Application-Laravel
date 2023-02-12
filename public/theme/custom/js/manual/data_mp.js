@@ -52,7 +52,6 @@
 		var unique_id_hi_element = {};
 		var data_text_hi_element = {};
 		
-		var user_id = '1';
 		var _token = $("#_token").val();
 guiUpdateHi();
 // for io text that need to be extracted

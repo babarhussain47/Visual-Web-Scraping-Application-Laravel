@@ -114,7 +114,8 @@
     <script type="text/javascript" src="{{asset('theme/files/assets/js/SmoothScroll.js')}}"></script>
     <script src="{{asset('theme/files/assets/js/pcoded.min.js')}}"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-	
+	<script> 
+		var user_id = '{{Auth::user()->id}}'; </script>
 	@yield('body-js')
 	
     <!-- custom js -->
