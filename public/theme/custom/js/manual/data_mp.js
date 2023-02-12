@@ -18,7 +18,7 @@
 			'<table id="hi_table_column_carrier" class="table table-striped table-bordered nowrap">'+
 				'<tbody id="hi-col-9493373-tbody">'+
 				'<input class="tabledit-input form-control input-sm" type="hidden" name="ext_id" value="'+ext_id+'">'+
-				'<input class="tabledit-input form-control input-sm" type="hidden" name="user_id" value="2">'+
+				'<input class="tabledit-input form-control input-sm" type="hidden" name="user_id" value="'+user_id+'">'+
 				'<input class="tabledit-input form-control input-sm" type="hidden" name="_token" value="'+csrf_token+'">'+
 				'<input class="tabledit-input form-control input-sm" type="hidden" id="_token" value="'+csrf_token+'">'+
 			'</tbody>'+
