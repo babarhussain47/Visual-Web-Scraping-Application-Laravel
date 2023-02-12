@@ -422,7 +422,7 @@ class UserExtractorController extends Controller
 	public function getDataSaveUrl($url)
 	{
 		$this->httpRequest->url = $url;
-		$tmp_file_body_load = "public/extractors/ext_".rand(1000,9999)."_1.html";
+		$tmp_file_body_load = "public/extractors/ext_".rand(1000,9999)."_".Auth->user()->id.".html";
 		$resp = json_decode($this->httpRequest->getBodyGuzzle(),true);
 		
 		if(isset($resp['response_code']) && $resp['response_code'] == '200')
